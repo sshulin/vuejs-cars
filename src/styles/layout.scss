@@ -1,0 +1,102 @@
+
+
+/* =======================
+    Layout (делаем бутстрап из миксинов с флексбоксами)
+========================== */
+
+/*
+  Центральный контейнер (аналог класса .container в бутстрапе)
+*/
+
+$layout-container-width: 980px;
+
+@mixin layout-container() {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+
+/*
+  Колонки (аналоги классов типа col-xs-6)
+*/
+
+$layout-col-padding: 20px;
+
+$layout-width-1: 8.33%;
+$layout-width-2: 16.66%;
+$layout-width-3: 25%;
+$layout-width-4: 33.33%;
+$layout-width-5: 41.66%;
+$layout-width-6: 50%;
+$layout-width-7: 58.33%;
+$layout-width-8: 66.66%;
+$layout-width-9: 75%;
+$layout-width-10: 83.33%;
+$layout-width-11: 91.66%;
+$layout-width-12: 100%;
+
+@mixin layout-col() {
+    box-sizing: border-box;
+    padding-left: $layout-col-padding;
+    padding-right: $layout-col-padding;
+}
+
+@mixin layout-col-1() {
+    @include layout-col;
+    width: $layout-width-1;
+}
+@mixin layout-col-2() {
+    @include layout-col;
+    width: $layout-width-2;
+}
+@mixin layout-col-3() {
+    @include layout-col;
+    width: $layout-width-3;
+}
+@mixin layout-col-4() {
+    @include layout-col;
+    width: $layout-width-4;
+}
+@mixin layout-col-5() {
+    @include layout-col;
+    width: $layout-width-5;
+}
+@mixin layout-col-6() {
+    @include layout-col;
+    width: $layout-width-6;
+}
+@mixin layout-col-7() {
+    @include layout-col;
+    width: $layout-width-7;
+}
+@mixin layout-col-8() {
+    @include layout-col;
+    width: $layout-width-8;
+}
+@mixin layout-col-9() {
+    @include layout-col;
+    width: $layout-width-9;
+}
+@mixin layout-col-10() {
+    @include layout-col;
+    width: $layout-width-10;
+}
+@mixin layout-col-11() {
+    @include layout-col;
+    width: $layout-width-11;
+}
+@mixin layout-col-12() {
+    @include layout-col;
+    width: $layout-width-12;
+}
+
+/* 
+    Вертикальные отступы
+*/
+
+@mixin layout-vertical-margin() {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

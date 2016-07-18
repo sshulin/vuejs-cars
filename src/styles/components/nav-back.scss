@@ -1,0 +1,15 @@
+/* =======================
+    NavBack component
+========================== */
+
+  .nav {
+    @include layout-container;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .nav__wrap {
+    @include layout-col-12;
+  }
+  .nav__backlink {
+    @include ui-button;
+  }

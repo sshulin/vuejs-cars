@@ -1,0 +1,9 @@
+/* =======================
+    CarList component
+========================== */
+
+  .car-list {
+    @include layout-container;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }

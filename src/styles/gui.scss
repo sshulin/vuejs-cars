@@ -1,0 +1,226 @@
+/* =======================
+    Fonts
+==========================*/
+@font-face {
+    font-family: 'PTSans';
+    src: url('/static/fonts/ptSans/PTS55F_W.eot');
+    src:
+    url('/static/fonts/ptSans/PTS55F_W.eot?#iefix') format('embedded-opentype'),
+    url('/static/fonts/ptSans/PTS55F_W.woff') format('woff'),
+    url('/static/fonts/ptSans/PTS55F_W.ttf') format('truetype'),
+    url('/static/fonts/ptSans/PTS55F_W.svg#PTSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('/static/fonts/ptSans/PTS75F_W.eot');
+    src:
+    url('/static/fonts/ptSans/PTS75F_W.eot?#iefix') format('embedded-opentype'),
+    url('/static/fonts/ptSans/PTS75F_W.woff') format('woff'),
+    url('/static/fonts/ptSans/PTS75F_W.ttf') format('truetype'),
+    url('/static/fonts/ptSans/PTS75F_W.svg#PTSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('/static/fonts/ptSans/PTS75F_W.eot');
+    src:
+    url('/static/fonts/ptSans/PTS56F_W.eot?#iefix') format('embedded-opentype'),
+    url('/static/fonts/ptSans/PTS56F_W.woff') format('woff'),
+    url('/static/fonts/ptSans/PTS56F_W.ttf') format('truetype'),
+    url('/static/fonts/ptSans/PTS56F_W.svg#PTSans-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* =======================================================
+    GUI
+========================================================== */
+
+$ui-color-base: #518f00;
+$ui-color-1: #000;
+$ui-color-2: #fff;
+
+/* =======================
+    Text Colors
+==========================*/
+
+$ui-color-text-main: #000000;
+$ui-color-text-context: #808080;
+
+/* =======================
+    Links Colors
+==========================*/
+$typo-link-normal-color:   #0168bb !default;
+$typo-link-hover-color:    $ui-color-base !default;
+$typo-link-visited-color:  #660099 !default;
+
+/* =======================
+    Links
+==========================*/
+@mixin ui-link() {
+    @include ui-typo-text-main;
+
+    text-decoration: none;
+    cursor: pointer;
+    color: $typo-link-normal-color;
+    border-bottom: 1px solid rgba($typo-link-normal-color, .3);
+
+    &:visited {
+        color: $typo-link-visited-color;
+        border-color: rgba($typo-link-visited-color, .3);
+    }
+
+    &:hover,
+    &:active {
+        color: $typo-link-hover-color;
+        border-color: rgba($typo-link-hover-color, .3);
+    }
+}
+
+/* =======================
+    Buttons
+==========================*/
+@mixin ui-button() {
+    @include ui-typo-text-main;
+
+    box-sizing: border-box;
+    padding: 0 12px;
+    height: 36px;
+    background-color: $ui-color-base;
+    color: $ui-color-2;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 100ms ease;
+
+    &:focus {
+        background-color: darken($ui-color-base, 50%);
+    }
+
+    &:hover {
+        background-color: adjust-color($ui-color-base, $saturation: -22%, $lightness: 12%);
+    }
+
+    &:active {
+        background-color: adjust-color($ui-color-base, $saturation: 22%, $lightness: 5%);
+    }
+}
+
+/* =======================
+    Inputs
+==========================*/
+@mixin ui-input {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 11px;
+    width: 100%;
+    height: 36px;
+    background-color: $ui-color-2;
+    border: 1px solid lighten($ui-color-1, 70%);
+    border-radius: 3px;
+    vertical-align: top;
+
+    @include ui-typo-text-main;
+
+    &:focus {
+        border-color: darken($ui-color-base, 20%);
+    }
+
+    &:disabled {
+        background-color: lighten($ui-color-1, 90%);
+        color: $ui-color-text-context;
+    }
+}
+
+/* =======================
+    Typography styles
+========================== */
+
+/*
+  Основной текст
+*/
+
+$typo-text-main-fz: 17px !default;
+$typo-text-main-lh: 24px !default;
+
+@mixin ui-typo-text-main() {
+    font-family: 'PTSans', 'sans-serif';
+    font-size: $typo-text-main-fz;
+    line-height: $typo-text-main-lh;
+    color: $ui-color-text-main;
+}
+
+/*
+  Второстепенный текст
+*/
+
+$typo-text-secondary-fz: 15px !default;
+$typo-text-secondary-lh: 18px !default;
+
+@mixin ui-typo-text-secondary() {
+    font-family: 'PTSans', 'sans-serif';
+    font-size: $typo-text-secondary-fz;
+    line-height: $typo-text-secondary-lh;
+    color: $ui-color-text-main;
+}
+
+/* =======================
+    Titles
+========================== */
+
+/*
+  Заголовок h1
+*/
+
+@mixin ui-typo-text-h1() {
+    font-family: 'PTSans', 'sans-serif';
+    font-size: 54px;
+    line-height: 60px;
+    font-weight: normal;
+}
+
+/*
+  Заголовок h2
+*/
+
+@mixin ui-typo-text-h2() {
+    font-family: 'PTSans', 'sans-serif';
+    font-size: 48px;
+    line-height: 54px;
+    font-weight: normal;
+}
+
+/*
+  Заголовок h3
+*/
+
+@mixin ui-typo-text-h3() {
+    font-family: 'PTSans', 'sans-serif';
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: normal;
+}
+
+/*
+  Знак рубля
+*/
+
+.ui-typo-symbol-ruble {
+    font: 1em 'PTSans', 'sans-serif';
+    position: relative;
+    display: inline;
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+
+    &:before {
+        content: '₽';
+    }
+}
+

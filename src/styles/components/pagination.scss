@@ -1,0 +1,18 @@
+/* =======================
+    Pagination component
+========================== */
+
+  .pagination {
+    @include layout-container;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .pagination__col {
+    @include layout-col-6;
+    &._next {
+      text-align: right;
+    }
+  }
+  .pagination__btn {
+    @include ui-button;
+  }

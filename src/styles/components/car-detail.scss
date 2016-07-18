@@ -1,0 +1,100 @@
+/* =======================
+    CarDetail component
+========================== */
+
+  .car-detail {
+    @include layout-container;
+  }
+  .car-detail__content {
+    @include layout-col-6;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .car-detail__bg-wrap {
+    background: #eaedf1;
+    padding: 10px 15px;
+  }
+  .car-detail__title {
+    @include ui-typo-text-h3
+    font-weight: bold;
+  }
+  .car-detail__year {
+    @include ui-typo-text-main;
+    font-weight: bold;
+  }
+  .car-detail__price {
+    @include ui-typo-text-main;
+    font-weight: bold;
+  }
+  .car-detail__props {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .car-detail__one-prop {
+    @include ui-typo-text-main;
+    width: $layout-width-6;
+  }
+  .car-detail__prop-label { 
+    font-weight: bold;
+  }
+
+  .car-detail__inners {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .car-detail__inner-label {
+    font-weight: bold;
+  }
+  .car-detail__inner-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .car-detail__inner-item {
+    @include ui-typo-text-main;
+    display: block;
+    width: 50%;
+  }
+  .car-detail__descript {
+    font-size: $typo-text-main-fz;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .car-detail__descript-label {
+    font-weight: bold;
+  }
+  .car-detail__descript-val {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .car-detail__all-photos {
+    @include layout-col-6;
+    display: flex;
+    flex-flow: wrap column;
+  }
+  .car-detail__more-photos {
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .car-detail__photo-wrap {
+    &._more {
+      cursor: pointer;
+      height: 100px;
+      overflow: hidden;
+      width: $layout-width-4;
+    }
+    &._main {      
+      width: $layout-width-12;
+    }
+  }
+  .car-detail__photo-self {
+    width: 100%;
+  }
+  .car-detail__more-photos {
+    width: $layout-width-12;
+  }

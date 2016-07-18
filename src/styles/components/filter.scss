@@ -1,0 +1,64 @@
+/* =======================
+    Filter
+========================== */
+
+  .filter {
+    @include layout-container;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .filter__form {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .filter__col {
+    @include layout-col-4;
+  }
+  .filter__input-group {
+    line-height: $typo-text-main-lh;
+    margin: 5px 0;
+  }
+  .filter__group-head {
+    @include ui-typo-text-main;
+    font-weight: bold;
+  }
+  .filter__group-body {
+    display: flex;
+    line-height: $typo-text-main-lh;    
+  }
+  .filter__text-input {
+    margin: 0 5px;
+    &._small {
+      width: 90px;
+    }
+  }
+  .filter__text-label {
+    font-size: $typo-text-secondary-fz;
+  }
+  .filter__radio-input {
+    display: none;
+  }
+  .filter__radio-label {
+    border-bottom: 1px solid #c4c4c4;
+    border-right: 1px solid #c4c4c4;
+    border-top: 1px solid #c4c4c4;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+  }
+  .filter__radio-label:first-of-type {
+    border-left: 1px solid #c4c4c4;
+  }
+  .filter__radio-input:checked + .filter__radio-label { 
+    background: #d9d9d9;
+  }
+  .filter__submit {
+    @include ui-button;
+    margin-top: 15px;
+  }
+  .filter__result {
+    @include layout-col-4;
+    margin-left: $layout-width-8;
+  }

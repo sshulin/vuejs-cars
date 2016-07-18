@@ -1,0 +1,47 @@
+/* =======================
+    CarItem component
+========================== */
+
+  .car-item {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    height: 150px;
+    flex-flow: nowrap;
+    margin: 10px 0;
+    padding: 0 20px;
+    width: 50%;
+    transition: 300ms ease;
+    &:hover {
+      opacity: .8;
+    }
+  }
+  .car-item__thumbnail {
+    @include layout-col-4;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+  .car-item__image {
+    background: url(http://olx.su/templates/ultimate/images/no-photobig.gif) center no-repeat;
+    background-size: contain;
+    min-width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+  .car-item__props {
+    @include layout-col-8;
+    background: #eaedf1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .car-item__title {
+    @include ui-typo-text-main;
+    font-weight: bold;
+  }
+  .car-item__prop {
+    @include ui-typo-text-secondary;
+  }
+  .car-item__prop-val._price {
+    font-weight: bold;
+  }
