@@ -27,14 +27,14 @@
       nav-back(@go-back="changeView")
       car-detail(:carData="oneCar")
     .list-page(v-if="view == 'list'")
-      filter(@submit-form="updateCars", @push-to-query="changeQuery", :queryData="query", :result="metadata")
+      car-filter(@submit-form="updateCars", @push-to-query="changeQuery", :queryData="query", :result="metadata")
       car-list(:carList="cars", @open-card="updateDetail")
       pagination(@go-next="setNextPage", @go-prev="setPrevPage", :pageData="query")
 </template>
   
 <script>
 
-import Filter from './Filter.vue';
+import CarFilter from './Filter.vue';
 import CarList from './CarList.vue';
 import CarDetail from './CarDetail.vue';
 import NavBack from './NavBack.vue';
@@ -42,7 +42,7 @@ import Pagination from './Pagination.vue';
 
 export default {
   components: {
-    Filter,
+    CarFilter,
     CarList,
     NavBack,
     CarDetail,
